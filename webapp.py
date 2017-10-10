@@ -24,10 +24,17 @@ def render_ftcresponse():
     celsius = (fahrenheit - 32)*(5/9)
     return render_template('ftcresponse.html', celsius = celsius)
 
+@app.route("/ftiresponse.html")
+def render_ftiresponse():
+    feet = float(request.args['feet'])
+    inches = feet*12
+    return render_template('ftcresponse.html', inches = inches)
 
-
-
-
+@app.route("/itfresponse.html")
+def render_itfresponse():
+    inches = float(request.args['inches'])
+    feet = inches/12
+    return render_template('ftcresponse.html', feet = feet)
 
 if __name__=="__main__":
     app.run(debug=False, port=54321)
