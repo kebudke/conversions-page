@@ -20,10 +20,10 @@
         </div>
 		<div class = "collapse navbar-collapse" id = "myNavbar">
           <ul class="nav navbar-nav">
-            <li><a href="home.html">Home</a></li>
-            <li><a href="fahrenheittocelsius.html">Fahrenheit to Celsius</a></li>
-            <li><a href="inchestofeet.html">Inches to Feet</a></li>
-            <li><a href="feettoinches.html">Feet to Inches</a></li>
+            <li {% if active_page == "home" %} class = "active" {% endif %}><a href="home.html">Home</a></li>
+            <li {% if active_page == "ftc" %} class = "active" {% endif %}><a href="fahrenheittocelsius.html">Fahrenheit to Celsius</a></li>
+            <li {% if active_page == "itf" %} class = "active" {% endif %}><a href="inchestofeet.html">Inches to Feet</a></li>
+            <li {% if active_page == "fti" %} class = "active" {% endif %}><a href="feettoinches.html">Feet to Inches</a></li>
           </ul>
 		  </div>
       </div>
