@@ -28,13 +28,13 @@ def render_ftcresponse():
 def render_ftiresponse():
     feet = float(request.args['feet'])
     inches = feet*12
-    return render_template('ftcresponse.html', inches = inches)
+    return render_template('ftiresponse.html', inches = inches)
 
 @app.route("/itfresponse.html")
 def render_itfresponse():
     inches = float(request.args['inches'])
     feet = inches/12
-    return render_template('ftcresponse.html', feet = feet)
+    return render_template('itfresponse.html', feet = feet)
 
 if __name__=="__main__":
     app.run(debug=False, port=54321)
