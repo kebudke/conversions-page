@@ -18,19 +18,16 @@ def render_itf():
 def render_fti():
     return render_template('feettoinches.html')
 
+@app.route("/ftcresponse")
+def render_ftcresponse():
+    fahrenheit = float(request.args['fahrenheit'])
+    celcius = (fahrenheit - 32)*(5/9)
+    return render_template('ftcresponse.html', celsius = celsius)
 
 
-# @app.route("/response")
-# def render_response():
-#     color = request.args['color']
-#     #The request object stores information about the request sent to the server.
-#     #args is a MultiDict (like a dictinary but can have multiple values for the same key)
-#     #The information in args is visible in the url for the page being requested (ex. .../response?color=blue
-#     if color == 'turquoise':
-#         reply = "That's my favorite color, too!"
-#     else:
-#         reply = "My favorite color is turquoise."
-#     return render_template('response.html', response = reply)   
-    
-# if __name__=="__main__":
-#     app.run(debug=False, port=54321)
+
+
+
+
+if __name__=="__main__":
+    app.run(debug=False, port=54321)
