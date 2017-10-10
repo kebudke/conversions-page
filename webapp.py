@@ -18,7 +18,7 @@ def render_itf():
 def render_fti():
     return render_template('feettoinches.html')
 
-@app.route("/ftcresponse")
+@app.route("/ftcresponse.html")
 def render_ftcresponse():
     fahrenheit = float(request.args['fahrenheit'])
     celcius = (fahrenheit - 32)*(5/9)
