@@ -22,7 +22,7 @@ def render_fti():
 def render_ftcresponse():
     fahrenheit = float(request.args['fahrenheit'])
     celsius = (fahrenheit - 32)*(5/9)
-    return render_template('ftcresponse.html', celsius = celsius)
+    return render_template('ftcresponse.html', celsius = celsius, fahrenheit = fahrenheit)
 
 @app.route("/ftiresponse.html")
 def render_ftiresponse():
@@ -34,7 +34,7 @@ def render_ftiresponse():
 def render_itfresponse():
     inches = float(request.args['inches'])
     feet = inches/12
-    return render_template('itfresponse.html', feet = feet)
+    return render_template('itfresponse.html', feet = feet, inches = inches)
 
 if __name__=="__main__":
     app.run(debug=False, port=54321)
